@@ -7,16 +7,16 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 # Load the trained model
 @st.cache_resource
 def load_model():
-    return tf.keras.models.load_model("ner_model.h5")
+    return tf.keras.models.load_model("artifacts/ner_model.h5")
 
 model = load_model()
 
 # Load tokenizers
 @st.cache_resource
 def load_tokenizers():
-    with open("word_tokenizer.pkl", "rb") as f:
+    with open("artifacts/word_tokenizer.pkl", "rb") as f:
         word_tokenizer = pickle.load(f)
-    with open("tag_tokenizer.pkl", "rb") as f:
+    with open("artifacts/tag_tokenizer.pkl", "rb") as f:
         tag_tokenizer = pickle.load(f)
     return word_tokenizer, tag_tokenizer
 
