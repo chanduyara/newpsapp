@@ -23,10 +23,10 @@ def load_tokenizers():
 word_tokenizer, tag_tokenizer = load_tokenizers()
 index_to_tag = tag_tokenizer.index_word
 
-# Set max sequence length (must match training)
+# Set max sequence length
 MAX_LEN = model.input_shape[1]  # Ensure consistency
 
-# Define function for Named Entity Recognition (NER)
+# function for Named Entity Recognition (NER)
 def predict_ner(sentence):
     words = sentence.split()
     sequence = word_tokenizer.texts_to_sequences([words])
